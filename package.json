@@ -1,0 +1,8 @@
+{
+  "name": "ads-musetrend-site",
+  "version": "1.0.0",
+  "description": "Dedicated High-Converting Landing Page Hub for ads.musetrend.com",
+  "scripts": {
+    "build": "echo 'Ready'"
+  }
+}
