@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Smart Redirecting...</title>
+  <script>
+    (function() {
+      // Map of Offer Slugs & ASINs to Direct Affiliate Destination Links
+      var offers = {
+        "toloco": "https://www.amazon.com/dp/B089KJTW4V?tag=prismeia-tw-20",
+        "b089kjtw4v": "https://www.amazon.com/dp/B089KJTW4V?tag=prismeia-tw-20",
+        "cosrx": "https://www.amazon.com/dp/B00PBX3L7K?tag=prismeia-tw-20",
+        "b00pbx3l7k": "https://www.amazon.com/dp/B00PBX3L7K?tag=prismeia-tw-20",
+        "pillow": "https://www.amazon.com/dp/B01IJNJAZ0?tag=prismeia-tw-20",
+        "b01ijnjaz0": "https://www.amazon.com/dp/B01IJNJAZ0?tag=prismeia-tw-20"
+      };
+
+      // Extract target parameter from query ?to=... or ?id=...
+      var params = new URLSearchParams(window.location.search);
+      var targetKey = (params.get("to") || params.get("id") || params.get("offer") || "toloco").toLowerCase();
+      var destination = offers[targetKey] || "https://www.amazon.com?tag=prismeia-tw-20";
+
+      // Redirect immediately
+      window.location.replace(destination);
+    })();
+  </script>
+</head>
+<body style="background:#0f172a;color:white;display:flex;align-items:center;justify-content:center;height:100vh;font-family:sans-serif;">
+  <p>Connecting to secure deal...</p>
+</body>
+</html>
